@@ -1,0 +1,7 @@
+{
+  "code_200": "Connecté",
+  "code_522": "Votre appareil n'est pas connecté à Internet",
+  "code_401": "Identifiant ou mot de passe incorrect",
+  "code_403": "Vous n'êtes pas autorisé à accéder à ce service",
+  "code_500": "Problème lors de la connexion au serveur"
+}
