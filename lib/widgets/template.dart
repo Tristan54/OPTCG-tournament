@@ -19,11 +19,14 @@ class Template{
 
   Widget build({required Widget child}) => Platform.isIOS ? child : SafeArea(child: child);
 
+  Widget iconAdd() => const Icon(Icons.add, size: 25);
+
   // Constantes
   int _animation_duration = 2;
 
   // Couleurs
   Color? grey = Colors.grey[800];
+  Color primary = const Color.fromRGBO(0, 33, 86, 1);
   Color black = Colors.black;
   Color white = Colors.white;
   Color yellow = Colors.yellow;
@@ -31,7 +34,6 @@ class Template{
   Color blue = Colors.blue;
   Color green = Colors.green;
   Color orange = Colors.orangeAccent;
-  Color done = Color.fromRGBO(255,222,173, 1);
 
   double get small => isMobile(context) ? sx(10.toDouble()) : sx(4.toDouble());
   double get small_padding => isMobile(context) ? sx(18.toDouble()) : sx(9.toDouble());
@@ -41,7 +43,7 @@ class Template{
   double get body_height => isMobile(context) ? sy(50.toDouble()) : sy(25.toDouble());
   double get small_text_size => isMobile(context) ? sx(20.toDouble()) : sx(10.toDouble());
   double get text_size => isMobile(context) ? sx(24.toDouble()) : sx(11.toDouble());
-  double get title_size => isMobile(context) ? sx(34.toDouble()) : sx(18.toDouble());
+  double get title_size => isMobile(context) ? sx(30.toDouble()) : sx(16.toDouble());
   double get body_text_width => isMobile(context) ? sx(260.toDouble()) : sx(150.toDouble());
 
   double get large_button_width => isMobile(context) ? sx(220.toDouble()) : sx(110.toDouble());
@@ -123,25 +125,4 @@ class Template{
     );
   }
 
-  Widget no_data(String message){
-    return Align(
-      alignment: Alignment.topCenter,
-      child: Column(
-          children: [
-        Container(
-          width: button_width,
-          height: button_width,
-          alignment: Alignment.center,
-          decoration: new BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/icons/no-data.png'),
-                fit: BoxFit.fill
-            ),
-          ),
-        ),
-        text(text: message),
-        ],
-      ),
-    );
-  }
 }
